@@ -23,11 +23,11 @@ resource "aws_cloudwatch_log_group" "second-lambda" {
   }
 }
 
- //Code to subscribe and allow the invoke permission
+//Code to subscribe and allow the invoke permission
 resource "aws_sns_topic_subscription" "test_sns_lambda_target" {
   topic_arn = aws_sns_topic.test-topic.arn
   protocol  = "lambda"
-  endpoint  =  aws_lambda_function.second_lambda.arn
+  endpoint  = aws_lambda_function.second_lambda.arn
 }
 
 resource "aws_lambda_permission" "with_test" {
