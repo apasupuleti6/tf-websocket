@@ -4,7 +4,6 @@ resource "aws_dynamodb_table" "connection-dynamodb-table" {
   read_capacity  = 20
   write_capacity = 20
   hash_key       = "clientId"
-  range_key      = "connectionId"
   /*
 creating a table with two attributes:[ clientId, connectionId ]. Defining both the attrubutes as strings
 */
@@ -19,15 +18,15 @@ creating a table with two attributes:[ clientId, connectionId ]. Defining both t
   }
 
 
-  global_secondary_index {
-    name               = "clientId-index"
-    hash_key           = "clientId"
-    range_key          = "connectionId"
-    write_capacity     = 10
-    read_capacity      = 10
-    projection_type    = "INCLUDE"
-    non_key_attributes = ["connectionId"]
-  }
+  # global_secondary_index {
+  #   name               = "clientId-index"
+  #   hash_key           = "clientId"
+  #   range_key          = "connectionId"
+  #   write_capacity     = 10
+  #   read_capacity      = 10
+  #   projection_type    = "INCLUDE"
+  #   non_key_attributes = ["connectionId"]
+  # }
 
   global_secondary_index {
     name               = "connectionId-index"

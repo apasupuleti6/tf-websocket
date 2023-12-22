@@ -9,7 +9,7 @@ export const handler = async (event, context) => {
   const command = new PutCommand({
     TableName: "websocket-connection",
     Item: {
-      clientId:" testClientInsert",
+      clientId:"testClientInsert",
       connectionId: event['requestContext']['connectionId']
     },
   });
