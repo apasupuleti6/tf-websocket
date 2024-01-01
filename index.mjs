@@ -18,7 +18,9 @@ export const handler = async (event, context) => {
   console.log("came out of successful creation of table insert");
   console.log(response);
   const return_response = {
-    statusCode : 200
+    statusCode: 200,
+    body: JSON.stringify('Hello from Lambda!'),
   };
-  return JSON.stringify(return_response);
+  return return_response;
 };
+
