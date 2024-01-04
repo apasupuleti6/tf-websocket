@@ -8,7 +8,7 @@ export const handler = async () => {
   const command = new DeleteCommand({
     TableName: "websocket-connection",
     Key: {
-      clientId: "testClientInsertola",
+      clientId: "testClientInsert",
     },
   });
 
