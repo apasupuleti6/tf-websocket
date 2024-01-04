@@ -39,6 +39,11 @@ resource "aws_apigatewayv2_route" "apigateway_route_default" {
   target    = "integrations/${aws_apigatewayv2_integration.connect_lamda.id}"
 }
 
+resource "aws_apigatewayv2_route_response" "apigateway_default_route_response" {
+  api_id             = aws_apigatewayv2_api.websocket-gw.id
+  route_id           = aws_apigatewayv2_route.apigateway_route_default.id
+  route_response_key = "$default"
+}
 
 /* route and integration for $connect */
 resource "aws_apigatewayv2_route" "apigateway-route-c" {
