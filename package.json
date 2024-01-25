@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "vitest",
-    "aswini": "vitest --ui"
+    "aswini": "vitest --ui --coverage"
+
   }
 }
