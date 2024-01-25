@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.499.0",
+    "@aws-sdk/lib-dynamodb": "^3.499.0",
+    "@vitest/ui": "^1.2.1",
+    "aws-sdk-client-mock": "^3.0.1",
+    "vitest": "^1.2.1"
+  },
+  "scripts": {
+    "test": "vitest",
+    "aswini": "vitest --ui"
+  }
+}
