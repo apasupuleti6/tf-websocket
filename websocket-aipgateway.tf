@@ -46,11 +46,13 @@ resource "aws_apigatewayv2_route_response" "apigateway_default_route_response" {
 }
 
 /* route and integration for $connect */
-resource "aws_apigatewayv2_route" "apigateway-route-c" {
+resource "aws_apigatewayv2_route" "apigateway_connect_route" {
   api_id    = aws_apigatewayv2_api.websocket-gw.id
   route_key = "$connect"
   target    = "integrations/${aws_apigatewayv2_integration.connect_lamda.id}"
 }
+/*creating API Gateway v2 route response: BadRequestException: Currently, only $default is supported as a RouteResponseKey.
+ The creation of the RouteResponse with a key of $default will indicate to API Gateway that this Route is intended to handle two-way communication.*/
 
 resource "aws_apigatewayv2_integration" "connect_lamda" {
   api_id           = aws_apigatewayv2_api.websocket-gw.id

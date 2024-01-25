@@ -4,11 +4,13 @@ import { DynamoDBDocumentClient, DeleteCommand } from "@aws-sdk/lib-dynamodb";
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
-export const handler = async () => {
+
+export const handler = async (event) => {
+  const connection_id = event.requestContext.connectionId;
   const command = new DeleteCommand({
     TableName: "websocket-connection",
     Key: {
-      clientId: "testClientInsert",
+      connectionId: connection_id,
     },
   });
 

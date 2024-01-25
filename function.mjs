@@ -4,47 +4,27 @@ import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
-export const handler = async (event) => {
-  // TODO implement
-  console.log(JSON.stringify(event));
 
-  const messages = event["Records"].map((element) => {
-    const message = element["Sns"]["Message"];
-    console.log(message);
-    sourceIp = message.sourceIp;
-    return message;
-  });
-  // Considering that we will only have one msg in the topic at a time for now .
-  const required_connectionId = getConnectionId(sourceIp);
 
-  return sendData(required_connectionId, messages);
-  /*
-    ********* code to use map ***********
 
-    messages = (event['Records']).map(element => {
-        const message = element['Sns']['Message'];
-        console.log(message);
-        retu
-        rn message;
+
+export const getConnectionId =  async (sourceIp) => {
+  console.log("INside get Connection ID:" + sourceIp)
+    const command = new GetCommand({
+      TableName: "websocket-connection",
+      Key: {
+        clientId: sourceIp,
+      },
     });
-     */
-};
+  
+    const response =  await docClient.send(command);
+    console.log(response);
+    const required_connectionId = response["Item"]["connectionId"];
+    console.log(required_connectionId);
+    return required_connectionId;
+  };
 
-export const getConnectionId = async (sourceIp) => {
-  const command = new GetCommand({
-    TableName: "websocket-connection",
-    Key: {
-      clientId: sourceIp,
-    },
-  });
 
-  const response = await docClient.send(command);
-
-  console.log(response);
-  const required_connectionId = response["Item"]["connectionId"];
-  console.log(required_connectionId);
-  return required_connectionId;
-};
 
 export const sendData = async (connectionId, messages) => {
   const URL = ""; // give the AWS websocket endpoint
@@ -70,6 +50,22 @@ export const sendData = async (connectionId, messages) => {
       body: JSON.stringify("Error posting message"),
     };
   }
-
-  return response;
 };
+
+export const handler = async (event) => {
+    // TODO implement
+    console.log(JSON.stringify(event));
+  let sourceIp
+    const messages = event["Records"].map((element) => {
+      const message = JSON.parse(element.Sns.Message);
+      console.log(message);
+      sourceIp = message.sourceIp;
+      return message;
+    });
+    // Considering that we will only have one msg in the topic at a time for now .
+    console.log("In handler" + sourceIp)
+    const required_connectionId = await getConnectionId(sourceIp);
+    console.log(required_connectionId);
+    return sendData(required_connectionId, messages);
+  
+  };

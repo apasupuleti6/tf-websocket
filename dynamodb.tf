@@ -1,5 +1,10 @@
+locals {
+  tablename = "websocket-connection"
+}
+
+
 resource "aws_dynamodb_table" "connection-dynamodb-table" {
-  name           = "websocket-connection"
+  name           = local.tablename
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
   write_capacity = 20
@@ -43,3 +48,4 @@ creating a table with two attributes:[ clientId, connectionId ]. Defining both t
     Environment = "dev"
   }
 }
+
