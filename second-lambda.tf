@@ -1,13 +1,13 @@
 data "archive_file" "second_lambda" {
   type        = "zip"
   source_file = "function.mjs"
-  output_path = "sns_invoke_lambda_function_payload.zip"
+  output_path = "${local.zip_path}/second_lambda.zip"
 }
 
 resource "aws_lambda_function" "second_lambda" {
   # If the file is not in the current working directory you will need to include a
   # path.module in the filename.
-  filename         = "sns_invoke_lambda_function_payload.zip"
+  filename         = "${local.zip_path}/second_lambda.zip"
   function_name    = "sns_invoke_lambda_function"
   role             = aws_iam_role.iam_for_lambda.arn
   handler          = "function.handler"
@@ -17,6 +17,7 @@ resource "aws_lambda_function" "second_lambda" {
 
 resource "aws_cloudwatch_log_group" "second-lambda" {
   name = "sns_invoke_lambda_function_logs"
+  retention_in_days = "${local.log_rentention}"
   tags = {
     Environment = "dev"
   }

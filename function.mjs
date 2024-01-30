@@ -9,7 +9,7 @@ const docClient = DynamoDBDocumentClient.from(client);
 
 
 export const getConnectionId =  async (sourceIp) => {
-  console.log("INside get Connection ID:" + sourceIp)
+  console.log("Inside get Connection ID:" + sourceIp)
     const command = new GetCommand({
       TableName: "websocket-connection",
       Key: {
@@ -51,13 +51,12 @@ export const sendData = async (connectionId, messages) => {
     };
   }
 };
-
 export const handler = async (event) => {
     // TODO implement
     console.log(JSON.stringify(event));
   let sourceIp
     const messages = event["Records"].map((element) => {
-      const message = JSON.parse(element.Sns.Message);
+      const message = element.Sns.Message;
       console.log(message);
       sourceIp = message.sourceIp;
       return message;

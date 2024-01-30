@@ -80,3 +80,7 @@ resource "aws_cloudwatch_log_group" "api_gw" {
 }
 
 
+locals {
+  zip_path = "zip/"
+  log_rentention = "7"
+}
