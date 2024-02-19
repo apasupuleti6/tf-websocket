@@ -13,7 +13,7 @@ export const handler = async (event) => {
       connectionId: connection_id,
     },
   });
-
+// test comment
   const response = await docClient.send(command);
   console.log(response);
   return response;
