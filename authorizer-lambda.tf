@@ -16,9 +16,19 @@ resource "aws_lambda_function" "authorizer_lambda" {
 }
 
 resource "aws_cloudwatch_log_group" "authorizer-lambda" {
-  name = "sns_invoke_lambda_function_logs"
+  name = "authorizer_lambda_log_group"
   retention_in_days = "${local.log_rentention}"
   tags = {
     Environment = "dev"
   }
 }
+
+
+resource "aws_apigatewayv2_authorizer" "authorizer" {
+  api_id           = aws_apigatewayv2_api.websocket-gw.id
+  authorizer_type  = "REQUEST"
+  authorizer_uri   = aws_lambda_function.authorizer_lambda.invoke_arn
+  identity_sources = ["route.request.querystring.authorizationToken"]
+  name             = "api-authorizer"
+}
+

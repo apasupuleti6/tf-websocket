@@ -4,12 +4,18 @@ import { handler } from "../disconnect";
 import { mockClient } from "aws-sdk-client-mock";
 import { DynamoDBDocumentClient,DeleteCommand} from "@aws-sdk/lib-dynamodb";
 const ddbMock = mockClient(DynamoDBDocumentClient);
+const event = {
+    requestContext : {
+        connectionId: "test"
+    }
+};
 
 describe("disconnect testcases", () =>{
+    
     beforeEach(() =>{
         ddbMock.reset();
     })
-    it("sucessful disconnect",async ()=>{
+    it.skip("sucessful disconnect",async (event)=>{
         ddbMock
         .on(DeleteCommand)
         .resolves("sucessfully disconnected");

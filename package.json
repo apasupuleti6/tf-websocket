@@ -2,6 +2,7 @@
   "devDependencies": {
     "@aws-sdk/client-apigatewaymanagementapi": "^3.499.0",
     "@aws-sdk/lib-dynamodb": "^3.499.0",
+    "@stryker-mutator/vitest-runner": "^8.2.3",
     "@vitest/coverage-v8": "^1.2.1",
     "@vitest/ui": "^1.2.1",
     "aws-sdk-client-mock": "^3.0.1",
