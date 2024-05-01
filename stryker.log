@@ -1,0 +1,4762 @@
+10:06:02 (10456) DEBUG ConfigReader Loading config from stryker.config.json
+10:06:02 (10456) DEBUG ConfigReader Loaded config: {
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "This config was generated using 'stryker init'. Please take a look at: https://stryker-mutator.io/docs/stryker-js/configuration/ for more information.",
+  "packageManager": "npm",
+  "reporters": [
+    "html",
+    "clear-text",
+    "progress"
+  ],
+  "testRunner": "vitest",
+  "testRunner_comment": "Take a look at (missing 'homepage' URL in package.json) for information about the vitest plugin.",
+  "coverageAnalysis": "perTest",
+  "disableTypeChecks": "app/**/*.{js,ts,jsx,tsx,html,vue}",
+  "fileLogLevel": "trace",
+  "logLevel": "debug",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "allowEmojis": false,
+    "logTests": true,
+    "maxTestsToLog": 3,
+    "reportTests": true,
+    "reportMutants": true,
+    "reportScoreTable": true
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "dryRunOnly": false,
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "ignoreStatic": false,
+  "incremental": false,
+  "incrementalFile": "reports/stryker-incremental.json",
+  "force": false,
+  "inPlace": false,
+  "maxConcurrentTestRunners": 9007199254740991,
+  "maxTestRunnerReuse": 0,
+  "mutate": [
+    "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)",
+    "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)"
+  ],
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "htmlReporter": {
+    "fileName": "reports/mutation/mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "symlinkNodeModules": true,
+  "tempDirName": ".stryker-tmp",
+  "cleanTempDir": true,
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false,
+  "allowEmpty": false,
+  "ignorers": []
+}
+10:06:02 (10456) DEBUG PluginLoader Loading @stryker-mutator/* from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator
+10:06:02 (10456) DEBUG PluginLoader Loading plugin "@stryker-mutator/vitest-runner" (matched with expression @stryker-mutator/*)
+10:06:02 (10456) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:06:02 (10456) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:06:02 (10456) DEBUG MetaSchemaBuilder Contributing 1 schemas from plugins to options validation.
+10:06:02 (10456) WARN ProjectReader Warning: No files found for mutation with the given glob expressions. As a result, a dry-run will be performed without actually modifying anything. If you intended to mutate files, please check and adjust the configuration. Current glob pattern(s) used: "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)", "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)". To enable file mutation, consider configuring the `mutate` property in your configuration file or using the --mutate option via the command line.
+10:06:02 (10456) DEBUG ProjectReader All input files: [
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.DS_Store",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.gitignore",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/archive/2.4.1/darwin_amd64/terraform-provider-archive_v2.4.1_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/aws/5.31.0/darwin_amd64/terraform-provider-aws_v5.31.0_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform.lock.hcl",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/README.md",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/.tmp/coverage-130.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/base.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/block-navigation.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/clover.xml",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/coverage-final.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/disconnect.mjs.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/favicon.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/index.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sort-arrow-sprite.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sorter.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/disconnect.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/dynamodb.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/function.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/index.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package-lock.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/provider.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/second-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/sns-topic.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/stryker.config.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate.backup",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/disconnect.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/function.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-aipgateway.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/second_lambda.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_connect.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_disconnect.zip"
+]
+10:06:02 (10456) DEBUG ProjectReader Files to mutate: []
+10:06:02 (10456) DEBUG TemporaryDirectory Using temp directory "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp"
+10:06:02 (10456) DEBUG Instrumenter Instrumenting 0 source files with mutants
+10:06:02 (10456) INFO Instrumenter Instrumented 0 source file(s) with 0 mutant(s)
+10:06:02 (10456) INFO ConcurrencyTokenProvider Creating 4 test runner process(es).
+10:06:02 (10456) DEBUG ChildProcessProxy Started CheckerWorker in worker process 0 with pid 10461 
+10:06:02 (10461) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:06:02 (10461) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:06:03 (10456) DEBUG Sandbox Creating a sandbox for files in /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093
+10:06:04 (10456) DEBUG Sandbox Start symlink node_modules
+10:06:04 (10456) DEBUG Sandbox Create symlink from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/node_modules
+10:06:04 (10456) DEBUG BroadcastReporter Broadcasting to reporters ["html","clear-text","progress"]
+10:06:04 (10456) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 0 with pid 10466 
+10:06:04 (10456) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 1 with pid 10467 
+10:06:04 (10466) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:06:04 (10466) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:06:04 (10467) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:06:04 (10467) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:06:05 (10466) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093
+10:06:05 (10467) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093
+10:06:05 (10466) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/.'vitest.0.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:06:05 (10456) INFO DryRunExecutor Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+10:06:05 (10456) DEBUG DryRunExecutor Using timeout of 300000 ms.
+10:06:05 (10456) DEBUG TimeoutDecorator Starting timeout timer (300000 ms) for a test run
+10:06:05 (10456) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 2 with pid 10470 
+10:06:05 (10456) TRACE ChildProcessProxy 
+
+10:06:05 (10456) TRACE ChildProcessProxy  RUN  v1.2.1 /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093
+
+10:06:05 (10456) TRACE ChildProcessProxy 
+
+10:06:05 (10467) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/.'vitest.1.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:06:05 (10456) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 3 with pid 10471 
+10:06:05 (10471) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:06:05 (10471) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:06:05 (10470) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:06:05 (10470) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:06:06 (10456) TRACE ChildProcessProxy  ✓ test/function.test.js  (1 test) 18ms
+
+10:06:06 (10456) TRACE ChildProcessProxy  ↓ test/disconnect.test.js  (1 test | 1 skipped)
+
+10:06:06 (10471) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093
+10:06:06 (10470) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093
+10:06:06 (10456) TRACE ChildProcessProxy 
+
+10:06:06 (10456) TRACE ChildProcessProxy ⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+10:06:06 (10456) TRACE ChildProcessProxy 
+Vitest caught 2 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+10:06:06 (10456) TRACE ChildProcessProxy 
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+
+10:06:06 (10456) TRACE ChildProcessProxy TypeError: Cannot read properties of undefined (reading 'connectionId')
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ getConnectionId function:21:49
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ Module.handler function:66:35
+
+10:06:06 (10456) TRACE ChildProcessProxy 
+
+10:06:06 (10456) TRACE ChildProcessProxy This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+10:06:06 (10456) TRACE ChildProcessProxy 
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+
+10:06:06 (10456) TRACE ChildProcessProxy AssertionError: promise resolved "undefined" instead of rejecting
+
+10:06:06 (10456) TRACE ChildProcessProxy 
+- Expected: 
+[Error: rejected promise]
+
++ Received: 
+undefined
+
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ Assertion.__VITEST_REJECTS__ ../../node_modules/@vitest/expect/dist/index.js:1417:19
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ Assertion.propertyGetter ../../node_modules/chai/lib/chai/utils/addProperty.js:62:29
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ Object.proxyGetter [as get] ../../node_modules/chai/lib/chai/utils/proxify.js:98:22
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ test/function.test.js:87:16
+
+10:06:06 (10456) TRACE ChildProcessProxy      85|     let fn = async () =>{  handler(inputRecords)};
+     86|       //qgetConnectionId("167.89.232")};
+     87|      expect(fn).rejects.toThrow();
+       |                ^
+     88|     // Assert
+     89|     // expect(result.statusCode).toBe(200);
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ ../../node_modules/@vitest/runner/dist/index.js:128:14
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ ../../node_modules/@vitest/runner/dist/index.js:59:26
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ runTest ../../node_modules/@vitest/runner/dist/index.js:675:17
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+
+10:06:06 (10456) TRACE ChildProcessProxy  ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+
+10:06:06 (10456) TRACE ChildProcessProxy 
+
+10:06:06 (10456) TRACE ChildProcessProxy This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+10:06:06 (10456) TRACE ChildProcessProxy ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+10:06:06 (10456) TRACE ChildProcessProxy 
+
+10:06:06 (10456) TRACE ChildProcessProxy  Test Files  1 passed | 1 skipped (2)
+
+10:06:06 (10456) TRACE ChildProcessProxy       Tests  1 passed | 1 skipped (2)
+
+10:06:06 (10456) TRACE ChildProcessProxy      Errors  2 errors
+
+10:06:06 (10456) TRACE ChildProcessProxy    Start at  10:06:05
+
+10:06:06 (10456) TRACE ChildProcessProxy    Duration  1.47s (transform 46ms, setup 23ms, collect 779ms, tests 18ms, environment 0ms, prepare 218ms)
+
+10:06:06 (10456) TRACE ChildProcessProxy 
+
+10:06:06 (10456) ERROR DryRunExecutor One or more tests resulted in an error:
+	An error occurred outside of a test run, please be sure to properly await your promises! {"stack":"TypeError: Cannot read properties of undefined (reading 'connectionId')\n    at getConnectionId (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/function:21:49)\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/function:66:35)","message":"Cannot read properties of undefined (reading 'connectionId')","stackStr":"TypeError: Cannot read properties of undefined (reading 'connectionId')\n    at getConnectionId (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/function:21:49)\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/function:66:35)","nameStr":"TypeError","expected":"undefined","actual":"undefined","constructor":"Function<TypeError>","name":"TypeError","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"getConnectionId","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/function","line":21,"column":49},{"method":"Module.handler","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/function","line":66,"column":35}]}
+{"message":"promise resolved \"undefined\" instead of rejecting","showDiff":true,"expected":"[Error: rejected promise]","actual":"undefined","stack":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","stackStr":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","nameStr":"AssertionError","diff":"- Expected: \n[Error: rejected promise]\n\n+ Received: \nundefined","name":"AssertionError","constructor":"Function<AssertionError>","toJSON":"Function<anonymous>","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"Assertion.__VITEST_REJECTS__","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js","line":1417,"column":19},{"method":"Assertion.propertyGetter","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js","line":62,"column":29},{"method":"Object.proxyGetter [as get]","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js","line":98,"column":22},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/test/function.test.js","line":87,"column":16},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":128,"column":14},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":59,"column":26},{"method":"runTest","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":675,"column":17},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15}]}
+10:06:06 (10456) DEBUG Stryker Not removing the temp dir because an error occurred
+10:06:06 (10456) ERROR Stryker Unexpected error occurred while running Stryker Error: Something went wrong in the initial test run
+    at DryRunExecutor.validateResultCompleted (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:75:15)
+    at DryRunExecutor.executeDryRun (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:95:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async WorkItem.execute (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:32:28)
+    at async file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:69:13
+10:06:06 (10456) INFO Stryker This might be a known problem with a solution documented in our troubleshooting guide.
+10:06:06 (10456) INFO Stryker You can find it at https://stryker-mutator.io/docs/stryker-js/troubleshooting/
+10:06:06 (10456) DEBUG ChildProcessProxy Disposing of worker process 10467
+10:06:06 (10456) DEBUG ChildProcessProxy Kill 10467
+10:06:06 (10456) DEBUG ChildProcessProxy Disposing of worker process 10466
+10:06:06 (10456) DEBUG ChildProcessProxy Kill 10466
+10:06:07 (10456) DEBUG ChildProcessProxy Disposing of worker process 10470
+10:06:07 (10456) DEBUG ChildProcessProxy Kill 10470
+10:06:07 (10456) DEBUG ChildProcessProxy Disposing of worker process 10471
+10:06:07 (10471) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/.'vitest.3.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4520093/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:06:07 (10456) DEBUG ChildProcessProxy Kill 10471
+10:06:07 (10456) DEBUG ChildProcessProxy Disposing of worker process 10461
+10:06:07 (10456) DEBUG ChildProcessProxy Kill 10461
+10:43:43 (11280) DEBUG ConfigReader Loading config from stryker.config.json
+10:43:43 (11280) DEBUG ConfigReader Loaded config: {
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "This config was generated using 'stryker init'. Please take a look at: https://stryker-mutator.io/docs/stryker-js/configuration/ for more information.",
+  "packageManager": "npm",
+  "reporters": [
+    "html",
+    "clear-text",
+    "progress"
+  ],
+  "testRunner": "vitest",
+  "testRunner_comment": "Take a look at (missing 'homepage' URL in package.json) for information about the vitest plugin.",
+  "coverageAnalysis": "perTest",
+  "disableTypeChecks": "app/**/*.{js,ts,jsx,tsx,html,vue}",
+  "fileLogLevel": "trace",
+  "logLevel": "debug",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "allowEmojis": false,
+    "logTests": true,
+    "maxTestsToLog": 3,
+    "reportTests": true,
+    "reportMutants": true,
+    "reportScoreTable": true
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "dryRunOnly": false,
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "ignoreStatic": false,
+  "incremental": false,
+  "incrementalFile": "reports/stryker-incremental.json",
+  "force": false,
+  "inPlace": false,
+  "maxConcurrentTestRunners": 9007199254740991,
+  "maxTestRunnerReuse": 0,
+  "mutate": [
+    "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)",
+    "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)"
+  ],
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "htmlReporter": {
+    "fileName": "reports/mutation/mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "symlinkNodeModules": true,
+  "tempDirName": ".stryker-tmp",
+  "cleanTempDir": true,
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false,
+  "allowEmpty": false,
+  "ignorers": []
+}
+10:43:43 (11280) DEBUG PluginLoader Loading @stryker-mutator/* from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator
+10:43:43 (11280) DEBUG PluginLoader Loading plugin "@stryker-mutator/vitest-runner" (matched with expression @stryker-mutator/*)
+10:43:43 (11280) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:43:43 (11280) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:43:43 (11280) DEBUG MetaSchemaBuilder Contributing 1 schemas from plugins to options validation.
+10:43:44 (11280) WARN ProjectReader Warning: No files found for mutation with the given glob expressions. As a result, a dry-run will be performed without actually modifying anything. If you intended to mutate files, please check and adjust the configuration. Current glob pattern(s) used: "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)", "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)". To enable file mutation, consider configuring the `mutate` property in your configuration file or using the --mutate option via the command line.
+10:43:44 (11280) DEBUG ProjectReader All input files: [
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.DS_Store",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.gitignore",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/archive/2.4.1/darwin_amd64/terraform-provider-archive_v2.4.1_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/aws/5.31.0/darwin_amd64/terraform-provider-aws_v5.31.0_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform.lock.hcl",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/README.md",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/.tmp/coverage-130.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/base.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/block-navigation.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/clover.xml",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/coverage-final.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/disconnect.mjs.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/favicon.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/index.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sort-arrow-sprite.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sorter.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/disconnect.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/dynamodb.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/function.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/index.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package-lock.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/provider.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/second-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/sns-topic.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/stryker.config.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate.backup",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/disconnect.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/function.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-aipgateway.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/second_lambda.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_connect.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_disconnect.zip"
+]
+10:43:44 (11280) DEBUG ProjectReader Files to mutate: []
+10:43:44 (11280) DEBUG TemporaryDirectory Using temp directory "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp"
+10:43:44 (11280) DEBUG Instrumenter Instrumenting 0 source files with mutants
+10:43:44 (11280) INFO Instrumenter Instrumented 0 source file(s) with 0 mutant(s)
+10:43:44 (11280) INFO ConcurrencyTokenProvider Creating 4 test runner process(es).
+10:43:44 (11280) DEBUG ChildProcessProxy Started CheckerWorker in worker process 0 with pid 11284 
+10:43:44 (11284) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:43:44 (11284) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:43:45 (11280) DEBUG Sandbox Creating a sandbox for files in /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120
+10:43:46 (11280) DEBUG Sandbox Start symlink node_modules
+10:43:46 (11280) DEBUG Sandbox Create symlink from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/node_modules
+10:43:46 (11280) DEBUG BroadcastReporter Broadcasting to reporters ["html","clear-text","progress"]
+10:43:46 (11280) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 0 with pid 11293 
+10:43:46 (11280) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 1 with pid 11294 
+10:43:47 (11293) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:43:47 (11293) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:43:47 (11294) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:43:47 (11294) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:43:48 (11293) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120
+10:43:48 (11294) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120
+10:43:48 (11293) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/.'vitest.0.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:43:48 (11280) INFO DryRunExecutor Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+10:43:48 (11280) DEBUG DryRunExecutor Using timeout of 300000 ms.
+10:43:48 (11280) DEBUG TimeoutDecorator Starting timeout timer (300000 ms) for a test run
+10:43:48 (11280) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 2 with pid 11298 
+10:43:48 (11280) TRACE ChildProcessProxy 10:43:48 AM [vite] error while updating dependencies:
+Error: ENOTEMPTY: directory not empty, rename '/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/node_modules/.vitest/deps_temp_c64483d5' -> '/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/node_modules/.vitest/deps'
+    at Object.renameSync (node:fs:1034:11)
+    at Object.commit (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/vite/dist/node/chunks/dep-9A4-l-43.js:65613:22)
+    at commitProcessing (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/vite/dist/node/chunks/dep-9A4-l-43.js:65008:40)
+    at runOptimizer (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/vite/dist/node/chunks/dep-9A4-l-43.js:65046:23)
+
+10:43:48 (11294) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/.'vitest.1.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:43:48 (11280) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 3 with pid 11299 
+10:43:48 (11280) TRACE ChildProcessProxy 
+ RUN  v1.2.1 /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120
+
+
+10:43:49 (11298) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:43:49 (11298) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:43:50 (11299) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:43:50 (11299) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:43:50 (11280) TRACE ChildProcessProxy  ✓ test/function.test.js  (1 test) 38ms
+
+10:43:50 (11298) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120
+10:43:50 (11299) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120
+10:43:51 (11298) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/.'vitest.2.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:43:51 (11299) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/.'vitest.3.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:43:51 (11280) TRACE ChildProcessProxy  ↓ test/disconnect.test.js  (1 test | 1 skipped)
+
+10:43:51 (11280) TRACE ChildProcessProxy 
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 2 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+10:43:51 (11280) TRACE ChildProcessProxy 
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+ReferenceError: required_connectionId is not defined
+ ❯ Module.handler function:71:19
+
+This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+[Error: rejected promise]
+
++ Received: 
+undefined
+
+ ❯ Assertion.__VITEST_REJECTS__ ../../node_modules/@vitest/expect/dist/index.js:1417:19
+ ❯ Assertion.propertyGetter ../../node_modules/chai/lib/chai/utils/addProperty.js:62:29
+ ❯ Object.proxyGetter [as get] ../../node_modules/chai/lib/chai/utils/proxify.js:98:22
+ ❯ test/function.test.js:87:16
+
+10:43:51 (11280) TRACE ChildProcessProxy      85|     let fn = async () =>{  handler(inputRecords)};
+     86|       //qgetConnectionId("167.89.232")};
+     87|      expect(fn).rejects.toThrow();
+       |                ^
+     88|     // Assert
+     89|     // expect(result.statusCode).toBe(200);
+ ❯ ../../node_modules/@vitest/runner/dist/index.js:128:14
+ ❯ ../../node_modules/@vitest/runner/dist/index.js:59:26
+ ❯ runTest ../../node_modules/@vitest/runner/dist/index.js:675:17
+ ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+ ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+
+This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+
+10:43:51 (11280) TRACE ChildProcessProxy ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+10:43:51 (11280) TRACE ChildProcessProxy  Test Files  1 passed | 1 skipped (2)
+      Tests  1 passed | 1 skipped (2)
+     Errors  2 errors
+   Start at  10:43:48
+   Duration  2.40s (transform 80ms, setup 65ms, collect 1.29s, tests 38ms, environment 1ms, prepare 365ms)
+
+
+10:43:51 (11280) ERROR DryRunExecutor One or more tests resulted in an error:
+	An error occurred outside of a test run, please be sure to properly await your promises! {"stack":"ReferenceError: required_connectionId is not defined\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/function:71:19)","message":"required_connectionId is not defined","stackStr":"ReferenceError: required_connectionId is not defined\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/function:71:19)","nameStr":"ReferenceError","expected":"undefined","actual":"undefined","constructor":"Function<ReferenceError>","name":"ReferenceError","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"Module.handler","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/function","line":71,"column":19}]}
+{"message":"promise resolved \"undefined\" instead of rejecting","showDiff":true,"expected":"[Error: rejected promise]","actual":"undefined","stack":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","stackStr":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","nameStr":"AssertionError","diff":"- Expected: \n[Error: rejected promise]\n\n+ Received: \nundefined","name":"AssertionError","constructor":"Function<AssertionError>","toJSON":"Function<anonymous>","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"Assertion.__VITEST_REJECTS__","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js","line":1417,"column":19},{"method":"Assertion.propertyGetter","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js","line":62,"column":29},{"method":"Object.proxyGetter [as get]","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js","line":98,"column":22},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox1908120/test/function.test.js","line":87,"column":16},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":128,"column":14},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":59,"column":26},{"method":"runTest","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":675,"column":17},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15}]}
+10:43:51 (11280) DEBUG Stryker Not removing the temp dir because an error occurred
+10:43:51 (11280) ERROR Stryker Unexpected error occurred while running Stryker Error: Something went wrong in the initial test run
+    at DryRunExecutor.validateResultCompleted (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:75:15)
+    at DryRunExecutor.executeDryRun (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:95:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async WorkItem.execute (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:32:28)
+    at async file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:69:13
+10:43:51 (11280) INFO Stryker This might be a known problem with a solution documented in our troubleshooting guide.
+10:43:51 (11280) INFO Stryker You can find it at https://stryker-mutator.io/docs/stryker-js/troubleshooting/
+10:43:51 (11280) DEBUG ChildProcessProxy Disposing of worker process 11294
+10:43:51 (11280) DEBUG ChildProcessProxy Disposing of worker process 11298
+10:43:51 (11280) DEBUG ChildProcessProxy Disposing of worker process 11299
+10:43:51 (11280) DEBUG ChildProcessProxy Kill 11294
+10:43:51 (11280) DEBUG ChildProcessProxy Kill 11298
+10:43:51 (11280) DEBUG ChildProcessProxy Kill 11299
+10:43:51 (11280) DEBUG ChildProcessProxy Disposing of worker process 11293
+10:43:51 (11280) DEBUG ChildProcessProxy Kill 11293
+10:43:51 (11280) DEBUG ChildProcessProxy Disposing of worker process 11284
+10:43:51 (11280) DEBUG ChildProcessProxy Kill 11284
+10:52:38 (11479) DEBUG ConfigReader Loading config from stryker.config.json
+10:52:38 (11479) DEBUG ConfigReader Loaded config: {
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "This config was generated using 'stryker init'. Please take a look at: https://stryker-mutator.io/docs/stryker-js/configuration/ for more information.",
+  "packageManager": "npm",
+  "reporters": [
+    "html",
+    "clear-text",
+    "progress"
+  ],
+  "testRunner": "vitest",
+  "testRunner_comment": "Take a look at (missing 'homepage' URL in package.json) for information about the vitest plugin.",
+  "coverageAnalysis": "perTest",
+  "disableTypeChecks": "app/**/*.{js,ts,jsx,tsx,html,vue}",
+  "fileLogLevel": "trace",
+  "logLevel": "debug",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "allowEmojis": false,
+    "logTests": true,
+    "maxTestsToLog": 3,
+    "reportTests": true,
+    "reportMutants": true,
+    "reportScoreTable": true
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "dryRunOnly": false,
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "ignoreStatic": false,
+  "incremental": false,
+  "incrementalFile": "reports/stryker-incremental.json",
+  "force": false,
+  "inPlace": false,
+  "maxConcurrentTestRunners": 9007199254740991,
+  "maxTestRunnerReuse": 0,
+  "mutate": [
+    "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)",
+    "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)"
+  ],
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "htmlReporter": {
+    "fileName": "reports/mutation/mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "symlinkNodeModules": true,
+  "tempDirName": ".stryker-tmp",
+  "cleanTempDir": true,
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false,
+  "allowEmpty": false,
+  "ignorers": []
+}
+10:52:38 (11479) DEBUG PluginLoader Loading @stryker-mutator/* from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator
+10:52:38 (11479) DEBUG PluginLoader Loading plugin "@stryker-mutator/vitest-runner" (matched with expression @stryker-mutator/*)
+10:52:38 (11479) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:52:38 (11479) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:52:38 (11479) DEBUG MetaSchemaBuilder Contributing 1 schemas from plugins to options validation.
+10:52:39 (11479) WARN ProjectReader Warning: No files found for mutation with the given glob expressions. As a result, a dry-run will be performed without actually modifying anything. If you intended to mutate files, please check and adjust the configuration. Current glob pattern(s) used: "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)", "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)". To enable file mutation, consider configuring the `mutate` property in your configuration file or using the --mutate option via the command line.
+10:52:39 (11479) DEBUG ProjectReader All input files: [
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.DS_Store",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.gitignore",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/archive/2.4.1/darwin_amd64/terraform-provider-archive_v2.4.1_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/aws/5.31.0/darwin_amd64/terraform-provider-aws_v5.31.0_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform.lock.hcl",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/README.md",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/.tmp/coverage-130.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/base.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/block-navigation.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/clover.xml",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/coverage-final.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/disconnect.mjs.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/favicon.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/index.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sort-arrow-sprite.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sorter.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/disconnect.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/dynamodb.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/function.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/index.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package-lock.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/provider.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/second-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/sns-topic.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/stryker.config.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate.backup",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/disconnect.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/function.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-aipgateway.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/second_lambda.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_connect.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_disconnect.zip"
+]
+10:52:39 (11479) DEBUG ProjectReader Files to mutate: []
+10:52:39 (11479) DEBUG TemporaryDirectory Using temp directory "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp"
+10:52:39 (11479) DEBUG Instrumenter Instrumenting 0 source files with mutants
+10:52:39 (11479) INFO Instrumenter Instrumented 0 source file(s) with 0 mutant(s)
+10:52:39 (11479) INFO ConcurrencyTokenProvider Creating 4 test runner process(es).
+10:52:39 (11479) DEBUG ChildProcessProxy Started CheckerWorker in worker process 0 with pid 11484 
+10:52:40 (11484) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:52:40 (11484) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:52:40 (11479) DEBUG Sandbox Creating a sandbox for files in /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362
+10:52:42 (11479) DEBUG Sandbox Start symlink node_modules
+10:52:42 (11479) DEBUG Sandbox Create symlink from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/node_modules
+10:52:42 (11479) DEBUG BroadcastReporter Broadcasting to reporters ["html","clear-text","progress"]
+10:52:42 (11479) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 0 with pid 11491 
+10:52:42 (11479) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 1 with pid 11492 
+10:52:43 (11491) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:52:43 (11491) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:52:43 (11492) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:52:43 (11492) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:52:44 (11491) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362
+10:52:44 (11492) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362
+10:52:44 (11492) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/.'vitest.1.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:52:44 (11479) INFO DryRunExecutor Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+10:52:44 (11479) DEBUG DryRunExecutor Using timeout of 300000 ms.
+10:52:44 (11479) DEBUG TimeoutDecorator Starting timeout timer (300000 ms) for a test run
+10:52:44 (11479) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 2 with pid 11497 
+10:52:44 (11491) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/.'vitest.0.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:52:44 (11479) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 3 with pid 11498 
+10:52:44 (11479) TRACE ChildProcessProxy 
+
+10:52:44 (11479) TRACE ChildProcessProxy  RUN  v1.2.1 /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362
+
+10:52:44 (11479) TRACE ChildProcessProxy 
+
+10:52:46 (11497) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:52:46 (11497) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:52:46 (11498) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+10:52:46 (11498) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+10:52:46 (11479) TRACE ChildProcessProxy  ✓ test/function.test.js  (1 test) 47ms
+
+10:52:47 (11497) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362
+10:52:47 (11498) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362
+10:52:47 (11497) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/.'vitest.2.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:52:47 (11498) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/.'vitest.3.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+10:52:47 (11479) TRACE ChildProcessProxy  ↓ test/disconnect.test.js  (1 test | 1 skipped)
+
+10:52:47 (11479) TRACE ChildProcessProxy 
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 2 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+10:52:47 (11479) TRACE ChildProcessProxy 
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+ReferenceError: required_connectionId is not defined
+ ❯ Module.handler function:71:19
+
+This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+[Error: rejected promise]
+
++ Received: 
+undefined
+
+ ❯ Assertion.__VITEST_REJECTS__ ../../node_modules/@vitest/expect/dist/index.js:1417:19
+ ❯ Assertion.propertyGetter ../../node_modules/chai/lib/chai/utils/addProperty.js:62:29
+ ❯ Object.proxyGetter [as get] ../../node_modules/chai/lib/chai/utils/proxify.js:98:22
+ ❯ test/function.test.js:87:16
+
+10:52:47 (11479) TRACE ChildProcessProxy      85|     let fn = async () =>{  handler(inputRecords)};
+     86|       //qgetConnectionId("167.89.232")};
+     87|      expect(fn).rejects.toThrow();
+       |                ^
+     88|     // Assert
+     89|     // expect(result.statusCode).toBe(200);
+ ❯ ../../node_modules/@vitest/runner/dist/index.js:128:14
+ ❯ ../../node_modules/@vitest/runner/dist/index.js:59:26
+ ❯ runTest ../../node_modules/@vitest/runner/dist/index.js:675:17
+ ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+ ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+
+This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+
+10:52:47 (11479) TRACE ChildProcessProxy ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+ Test Files  1 passed | 1 skipped (2)
+      Tests  1 passed | 1 skipped (2)
+     Errors  2 errors
+   Start at  10:52:44
+   Duration  2.76s (transform 48ms, setup 26ms, collect 1.74s, tests 47ms, environment 1ms, prepare 436ms)
+
+
+10:52:47 (11479) ERROR DryRunExecutor One or more tests resulted in an error:
+	An error occurred outside of a test run, please be sure to properly await your promises! {"stack":"ReferenceError: required_connectionId is not defined\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/function:71:19)","message":"required_connectionId is not defined","stackStr":"ReferenceError: required_connectionId is not defined\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/function:71:19)","nameStr":"ReferenceError","expected":"undefined","actual":"undefined","constructor":"Function<ReferenceError>","name":"ReferenceError","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"Module.handler","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/function","line":71,"column":19}]}
+{"message":"promise resolved \"undefined\" instead of rejecting","showDiff":true,"expected":"[Error: rejected promise]","actual":"undefined","stack":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","stackStr":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","nameStr":"AssertionError","diff":"- Expected: \n[Error: rejected promise]\n\n+ Received: \nundefined","name":"AssertionError","constructor":"Function<AssertionError>","toJSON":"Function<anonymous>","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"Assertion.__VITEST_REJECTS__","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js","line":1417,"column":19},{"method":"Assertion.propertyGetter","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js","line":62,"column":29},{"method":"Object.proxyGetter [as get]","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js","line":98,"column":22},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox4431362/test/function.test.js","line":87,"column":16},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":128,"column":14},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":59,"column":26},{"method":"runTest","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":675,"column":17},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15}]}
+10:52:47 (11479) DEBUG Stryker Not removing the temp dir because an error occurred
+10:52:47 (11479) ERROR Stryker Unexpected error occurred while running Stryker Error: Something went wrong in the initial test run
+    at DryRunExecutor.validateResultCompleted (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:75:15)
+    at DryRunExecutor.executeDryRun (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:95:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async WorkItem.execute (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:32:28)
+    at async file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:69:13
+10:52:47 (11479) INFO Stryker This might be a known problem with a solution documented in our troubleshooting guide.
+10:52:47 (11479) INFO Stryker You can find it at https://stryker-mutator.io/docs/stryker-js/troubleshooting/
+10:52:47 (11479) DEBUG ChildProcessProxy Disposing of worker process 11491
+10:52:47 (11479) DEBUG ChildProcessProxy Disposing of worker process 11498
+10:52:47 (11479) DEBUG ChildProcessProxy Disposing of worker process 11497
+10:52:47 (11479) DEBUG ChildProcessProxy Kill 11491
+10:52:47 (11479) DEBUG ChildProcessProxy Kill 11497
+10:52:47 (11479) DEBUG ChildProcessProxy Kill 11498
+10:52:47 (11479) DEBUG ChildProcessProxy Disposing of worker process 11492
+10:52:47 (11479) DEBUG ChildProcessProxy Kill 11492
+10:52:47 (11479) DEBUG ChildProcessProxy Disposing of worker process 11484
+10:52:47 (11479) DEBUG ChildProcessProxy Kill 11484
+11:33:57 (12505) DEBUG ConfigReader Loading config from stryker.config.json
+11:33:57 (12505) DEBUG ConfigReader Loaded config: {
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "This config was generated using 'stryker init'. Please take a look at: https://stryker-mutator.io/docs/stryker-js/configuration/ for more information.",
+  "packageManager": "npm",
+  "reporters": [
+    "html",
+    "clear-text",
+    "progress"
+  ],
+  "testRunner": "vitest",
+  "testRunner_comment": "Take a look at (missing 'homepage' URL in package.json) for information about the vitest plugin.",
+  "coverageAnalysis": "perTest",
+  "disableTypeChecks": "app/**/*.{js,ts,jsx,tsx,html,vue}",
+  "fileLogLevel": "trace",
+  "logLevel": "debug",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "allowEmojis": false,
+    "logTests": true,
+    "maxTestsToLog": 3,
+    "reportTests": true,
+    "reportMutants": true,
+    "reportScoreTable": true
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "dryRunOnly": false,
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "ignoreStatic": false,
+  "incremental": false,
+  "incrementalFile": "reports/stryker-incremental.json",
+  "force": false,
+  "inPlace": false,
+  "maxConcurrentTestRunners": 9007199254740991,
+  "maxTestRunnerReuse": 0,
+  "mutate": [
+    "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)",
+    "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)"
+  ],
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "htmlReporter": {
+    "fileName": "reports/mutation/mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "symlinkNodeModules": true,
+  "tempDirName": ".stryker-tmp",
+  "cleanTempDir": true,
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false,
+  "allowEmpty": false,
+  "ignorers": []
+}
+11:33:57 (12505) DEBUG PluginLoader Loading @stryker-mutator/* from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator
+11:33:57 (12505) DEBUG PluginLoader Loading plugin "@stryker-mutator/vitest-runner" (matched with expression @stryker-mutator/*)
+11:33:57 (12505) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:33:57 (12505) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:33:57 (12505) DEBUG MetaSchemaBuilder Contributing 1 schemas from plugins to options validation.
+11:33:57 (12505) WARN ProjectReader Warning: No files found for mutation with the given glob expressions. As a result, a dry-run will be performed without actually modifying anything. If you intended to mutate files, please check and adjust the configuration. Current glob pattern(s) used: "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)", "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)". To enable file mutation, consider configuring the `mutate` property in your configuration file or using the --mutate option via the command line.
+11:33:57 (12505) DEBUG ProjectReader All input files: [
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.DS_Store",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.gitignore",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/archive/2.4.1/darwin_amd64/terraform-provider-archive_v2.4.1_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/aws/5.31.0/darwin_amd64/terraform-provider-aws_v5.31.0_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform.lock.hcl",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/README.md",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/.tmp/coverage-130.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/base.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/block-navigation.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/clover.xml",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/coverage-final.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/disconnect.mjs.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/favicon.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/index.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sort-arrow-sprite.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sorter.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/disconnect.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/dynamodb.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/function.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/index.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package-lock.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/provider.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/second-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/sns-topic.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/stryker.config.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate.backup",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/disconnect.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/function.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-aipgateway.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/second_lambda.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_connect.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_disconnect.zip"
+]
+11:33:57 (12505) DEBUG ProjectReader Files to mutate: []
+11:33:57 (12505) DEBUG TemporaryDirectory Using temp directory "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp"
+11:33:57 (12505) DEBUG Instrumenter Instrumenting 0 source files with mutants
+11:33:57 (12505) INFO Instrumenter Instrumented 0 source file(s) with 0 mutant(s)
+11:33:57 (12505) INFO ConcurrencyTokenProvider Creating 4 test runner process(es).
+11:33:57 (12505) DEBUG ChildProcessProxy Started CheckerWorker in worker process 0 with pid 12507 
+11:33:58 (12507) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:33:58 (12507) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:33:58 (12505) DEBUG Sandbox Creating a sandbox for files in /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204
+11:34:00 (12505) DEBUG Sandbox Start symlink node_modules
+11:34:00 (12505) DEBUG Sandbox Create symlink from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/node_modules
+11:34:00 (12505) DEBUG BroadcastReporter Broadcasting to reporters ["html","clear-text","progress"]
+11:34:00 (12505) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 0 with pid 12515 
+11:34:00 (12505) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 1 with pid 12516 
+11:34:01 (12515) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:34:01 (12515) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:34:01 (12516) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:34:01 (12516) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:34:01 (12515) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204
+11:34:01 (12516) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204
+11:34:01 (12515) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/.'vitest.0.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+11:34:01 (12505) INFO DryRunExecutor Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+11:34:01 (12505) DEBUG DryRunExecutor Using timeout of 300000 ms.
+11:34:01 (12505) DEBUG TimeoutDecorator Starting timeout timer (300000 ms) for a test run
+11:34:01 (12505) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 2 with pid 12520 
+11:34:01 (12516) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/.'vitest.1.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+11:34:01 (12505) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 3 with pid 12521 
+11:34:01 (12505) TRACE ChildProcessProxy 
+ RUN  v1.2.1 /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204
+
+
+11:34:02 (12520) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:34:02 (12520) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:34:03 (12521) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:34:03 (12521) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:34:03 (12505) TRACE ChildProcessProxy  ✓ test/function.test.js  (1 test) 57ms
+
+11:34:03 (12520) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204
+11:34:04 (12520) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/.'vitest.2.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+11:34:04 (12521) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204
+11:34:04 (12505) TRACE ChildProcessProxy  ↓ test/disconnect.test.js  (1 test | 1 skipped)
+
+11:34:04 (12505) TRACE ChildProcessProxy 
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 2 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+11:34:04 (12505) TRACE ChildProcessProxy 
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+ReferenceError: required_connectionId is not defined
+ ❯ Module.handler function:71:19
+
+This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+[Error: rejected promise]
+
++ Received: 
+undefined
+
+ ❯ Assertion.__VITEST_REJECTS__ ../../node_modules/@vitest/expect/dist/index.js:1417:19
+ ❯ Assertion.propertyGetter ../../node_modules/chai/lib/chai/utils/addProperty.js:62:29
+ ❯ Object.proxyGetter [as get] ../../node_modules/chai/lib/chai/utils/proxify.js:98:22
+ ❯ test/function.test.js:87:16
+
+11:34:04 (12505) TRACE ChildProcessProxy      85|     let fn = async () =>{  handler(inputRecords)};
+     86|       //qgetConnectionId("167.89.232")};
+     87|      expect(fn).rejects.toThrow();
+       |                ^
+     88|     // Assert
+     89|     // expect(result.statusCode).toBe(200);
+
+11:34:04 (12505) TRACE ChildProcessProxy  ❯ ../../node_modules/@vitest/runner/dist/index.js:128:14
+
+11:34:04 (12505) TRACE ChildProcessProxy  ❯ ../../node_modules/@vitest/runner/dist/index.js:59:26
+
+11:34:04 (12505) TRACE ChildProcessProxy  ❯ runTest ../../node_modules/@vitest/runner/dist/index.js:675:17
+
+11:34:04 (12505) TRACE ChildProcessProxy  ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+
+11:34:04 (12505) TRACE ChildProcessProxy  ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+
+11:34:04 (12505) TRACE ChildProcessProxy 
+
+11:34:04 (12505) TRACE ChildProcessProxy This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+11:34:04 (12505) TRACE ChildProcessProxy ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+11:34:04 (12505) TRACE ChildProcessProxy 
+
+11:34:04 (12505) TRACE ChildProcessProxy  Test Files  1 passed | 1 skipped (2)
+
+11:34:04 (12505) TRACE ChildProcessProxy       Tests  1 passed | 1 skipped (2)
+
+11:34:04 (12505) TRACE ChildProcessProxy      Errors  2 errors
+
+11:34:04 (12505) TRACE ChildProcessProxy    Start at  11:34:01
+
+11:34:04 (12505) TRACE ChildProcessProxy    Duration  2.57s (transform 41ms, setup 67ms, collect 1.45s, tests 57ms, environment 0ms, prepare 403ms)
+
+11:34:04 (12505) TRACE ChildProcessProxy 
+
+11:34:04 (12505) ERROR DryRunExecutor One or more tests resulted in an error:
+	An error occurred outside of a test run, please be sure to properly await your promises! {"stack":"ReferenceError: required_connectionId is not defined\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/function:71:19)","message":"required_connectionId is not defined","stackStr":"ReferenceError: required_connectionId is not defined\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/function:71:19)","nameStr":"ReferenceError","expected":"undefined","actual":"undefined","constructor":"Function<ReferenceError>","name":"ReferenceError","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"Module.handler","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/function","line":71,"column":19}]}
+{"message":"promise resolved \"undefined\" instead of rejecting","showDiff":true,"expected":"[Error: rejected promise]","actual":"undefined","stack":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","stackStr":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","nameStr":"AssertionError","diff":"- Expected: \n[Error: rejected promise]\n\n+ Received: \nundefined","name":"AssertionError","constructor":"Function<AssertionError>","toJSON":"Function<anonymous>","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"Assertion.__VITEST_REJECTS__","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js","line":1417,"column":19},{"method":"Assertion.propertyGetter","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js","line":62,"column":29},{"method":"Object.proxyGetter [as get]","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js","line":98,"column":22},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox6716204/test/function.test.js","line":87,"column":16},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":128,"column":14},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":59,"column":26},{"method":"runTest","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":675,"column":17},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15}]}
+11:34:04 (12505) DEBUG Stryker Not removing the temp dir because an error occurred
+11:34:04 (12505) ERROR Stryker Unexpected error occurred while running Stryker Error: Something went wrong in the initial test run
+    at DryRunExecutor.validateResultCompleted (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:75:15)
+    at DryRunExecutor.executeDryRun (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:95:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async WorkItem.execute (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:32:28)
+    at async file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:69:13
+11:34:04 (12505) INFO Stryker This might be a known problem with a solution documented in our troubleshooting guide.
+11:34:04 (12505) INFO Stryker You can find it at https://stryker-mutator.io/docs/stryker-js/troubleshooting/
+11:34:04 (12505) DEBUG ChildProcessProxy Disposing of worker process 12516
+11:34:04 (12505) DEBUG ChildProcessProxy Kill 12516
+11:34:04 (12505) DEBUG ChildProcessProxy Disposing of worker process 12515
+11:34:04 (12505) DEBUG ChildProcessProxy Kill 12515
+11:34:04 (12505) DEBUG ChildProcessProxy Disposing of worker process 12520
+11:34:04 (12505) DEBUG ChildProcessProxy Kill 12520
+11:34:04 (12505) DEBUG ChildProcessProxy Disposing of worker process 12521
+11:34:04 (12505) DEBUG ChildProcessProxy Kill 12521
+11:34:04 (12505) DEBUG ChildProcessProxy Disposing of worker process 12507
+11:34:04 (12505) DEBUG ChildProcessProxy Kill 12507
+11:35:11 (12650) DEBUG ConfigReader Loading config from stryker.config.json
+11:35:11 (12650) DEBUG ConfigReader Loaded config: {
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "This config was generated using 'stryker init'. Please take a look at: https://stryker-mutator.io/docs/stryker-js/configuration/ for more information.",
+  "packageManager": "npm",
+  "reporters": [
+    "html",
+    "clear-text",
+    "progress"
+  ],
+  "testRunner": "vitest",
+  "testRunner_comment": "Take a look at (missing 'homepage' URL in package.json) for information about the vitest plugin.",
+  "coverageAnalysis": "perTest",
+  "disableTypeChecks": "app/**/*.{js,ts,jsx,tsx,html,vue}",
+  "cleanTempDir": "always",
+  "fileLogLevel": "trace",
+  "logLevel": "debug",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "allowEmojis": false,
+    "logTests": true,
+    "maxTestsToLog": 3,
+    "reportTests": true,
+    "reportMutants": true,
+    "reportScoreTable": true
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "dryRunOnly": false,
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "ignoreStatic": false,
+  "incremental": false,
+  "incrementalFile": "reports/stryker-incremental.json",
+  "force": false,
+  "inPlace": false,
+  "maxConcurrentTestRunners": 9007199254740991,
+  "maxTestRunnerReuse": 0,
+  "mutate": [
+    "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)",
+    "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)"
+  ],
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "htmlReporter": {
+    "fileName": "reports/mutation/mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "symlinkNodeModules": true,
+  "tempDirName": ".stryker-tmp",
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false,
+  "allowEmpty": false,
+  "ignorers": []
+}
+11:35:11 (12650) DEBUG PluginLoader Loading @stryker-mutator/* from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator
+11:35:11 (12650) DEBUG PluginLoader Loading plugin "@stryker-mutator/vitest-runner" (matched with expression @stryker-mutator/*)
+11:35:11 (12650) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:35:11 (12650) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:35:11 (12650) DEBUG MetaSchemaBuilder Contributing 1 schemas from plugins to options validation.
+11:35:11 (12650) WARN ProjectReader Warning: No files found for mutation with the given glob expressions. As a result, a dry-run will be performed without actually modifying anything. If you intended to mutate files, please check and adjust the configuration. Current glob pattern(s) used: "{src,lib}/**/!(*.+(s|S)pec|*.+(t|T)est).+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)", "!{src,lib}/**/__tests__/**/*.+(cjs|mjs|js|ts|mts|cts|jsx|tsx|html|vue|svelte)". To enable file mutation, consider configuring the `mutate` property in your configuration file or using the --mutate option via the command line.
+11:35:11 (12650) DEBUG ProjectReader All input files: [
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.DS_Store",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.gitignore",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/archive/2.4.1/darwin_amd64/terraform-provider-archive_v2.4.1_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform/providers/registry.terraform.io/hashicorp/aws/5.31.0/darwin_amd64/terraform-provider-aws_v5.31.0_x5",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.terraform.lock.hcl",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/README.md",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/.tmp/coverage-130.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/base.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/block-navigation.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/clover.xml",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/coverage-final.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/disconnect.mjs.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/favicon.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/index.html",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.css",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/prettify.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sort-arrow-sprite.png",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/coverage/sorter.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/disconnect.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/dynamodb.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/function.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/index.mjs",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package-lock.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/package.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/provider.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/second-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/sns-topic.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/stryker.config.json",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/terraform.tfstate.backup",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/disconnect.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/test/function.test.js",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-aipgateway.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/websocket-lambda.tf",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/second_lambda.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_connect.zip",
+  "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/zip/websocket_lambda_disconnect.zip"
+]
+11:35:11 (12650) DEBUG ProjectReader Files to mutate: []
+11:35:11 (12650) DEBUG TemporaryDirectory Using temp directory "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp"
+11:35:11 (12650) DEBUG Instrumenter Instrumenting 0 source files with mutants
+11:35:11 (12650) INFO Instrumenter Instrumented 0 source file(s) with 0 mutant(s)
+11:35:11 (12650) INFO ConcurrencyTokenProvider Creating 4 test runner process(es).
+11:35:11 (12650) DEBUG ChildProcessProxy Started CheckerWorker in worker process 0 with pid 12654 
+11:35:12 (12654) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:35:12 (12654) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:35:12 (12650) DEBUG Sandbox Creating a sandbox for files in /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873
+11:35:13 (12650) DEBUG Sandbox Start symlink node_modules
+11:35:13 (12650) DEBUG Sandbox Create symlink from /Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/node_modules
+11:35:13 (12650) DEBUG BroadcastReporter Broadcasting to reporters ["html","clear-text","progress"]
+11:35:13 (12650) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 0 with pid 12661 
+11:35:13 (12650) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 1 with pid 12662 
+11:35:14 (12661) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:35:14 (12661) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:35:14 (12662) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:35:14 (12662) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:35:14 (12661) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873
+11:35:14 (12662) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873
+11:35:14 (12661) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/.'vitest.0.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+11:35:14 (12650) INFO DryRunExecutor Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+11:35:14 (12650) DEBUG DryRunExecutor Using timeout of 300000 ms.
+11:35:14 (12650) DEBUG TimeoutDecorator Starting timeout timer (300000 ms) for a test run
+11:35:14 (12650) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 2 with pid 12665 
+11:35:14 (12662) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/.'vitest.1.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+11:35:14 (12650) DEBUG ChildProcessProxy Started ChildProcessTestRunnerWorker in worker process 3 with pid 12666 
+11:35:14 (12650) TRACE ChildProcessProxy 
+ RUN  v1.2.1 /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873
+
+
+11:35:15 (12665) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:35:15 (12665) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:35:15 (12650) TRACE ChildProcessProxy  ✓ test/function.test.js  (1 test) 51ms
+
+11:35:15 (12666) DEBUG PluginLoader Loading plugin @stryker-mutator/vitest-runner
+11:35:15 (12666) DEBUG PluginLoader Loading plugin file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+11:35:15 (12666) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873
+11:35:15 (12665) DEBUG ChildProcessProxyWorker Changing current working directory for this process to /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873
+11:35:15 (12666) DEBUG VitestTestRunner vitest final config: {
+  "allowOnly": true,
+  "isolate": true,
+  "watch": false,
+  "globals": false,
+  "environment": "node",
+  "pool": "threads",
+  "clearMocks": false,
+  "restoreMocks": false,
+  "mockReset": false,
+  "include": [
+    "**/*.{test,spec}.?(c|m)[jt]s?(x)"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/cypress/**",
+    "**/.{idea,git,cache,output,temp}/**",
+    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+  ],
+  "testTimeout": 5000,
+  "hookTimeout": 10000,
+  "teardownTimeout": 10000,
+  "watchExclude": [
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "forceRerunTriggers": [
+    "**/package.json/**",
+    "**/{vitest,vite}.config.*/**"
+  ],
+  "update": false,
+  "reporters": [
+    "default"
+  ],
+  "silent": false,
+  "hideSkippedTests": false,
+  "api": {
+    "middlewareMode": true
+  },
+  "ui": false,
+  "uiBase": "/__vitest__/",
+  "open": true,
+  "css": {
+    "include": [],
+    "modules": {
+      "classNameStrategy": "stable"
+    }
+  },
+  "coverage": {
+    "provider": "v8",
+    "enabled": false,
+    "all": true,
+    "clean": true,
+    "cleanOnRerun": true,
+    "reportsDirectory": "./coverage",
+    "exclude": [
+      "coverage/**",
+      "dist/**",
+      "**/[.]**",
+      "packages/*/test?(s)/**",
+      "**/*.d.ts",
+      "**/virtual:*",
+      "**/__x00__*",
+      "**/\u0000*",
+      "cypress/**",
+      "test?(s)/**",
+      "test?(-*).?(c|m)[jt]s?(x)",
+      "**/*{.,-}{test,spec}.?(c|m)[jt]s?(x)",
+      "**/__tests__/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      "**/vitest.{workspace,projects}.[jt]s?(on)",
+      "**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}"
+    ],
+    "reportOnFailure": false,
+    "reporter": [
+      [
+        "text",
+        {}
+      ],
+      [
+        "html",
+        {}
+      ],
+      [
+        "clover",
+        {}
+      ],
+      [
+        "json",
+        {}
+      ]
+    ],
+    "extension": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".mts",
+      ".cts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".marko"
+    ],
+    "allowExternal": false,
+    "processingConcurrency": 4
+  },
+  "fakeTimers": {
+    "loopLimit": 10000,
+    "shouldClearNativeTimers": true,
+    "toFake": [
+      "setTimeout",
+      "clearTimeout",
+      "setInterval",
+      "clearInterval",
+      "setImmediate",
+      "clearImmediate",
+      "Date"
+    ]
+  },
+  "maxConcurrency": 1,
+  "dangerouslyIgnoreUnhandledErrors": false,
+  "typecheck": {
+    "checker": "tsc",
+    "include": [
+      "**/*.{test,spec}-d.?(c|m)[jt]s?(x)"
+    ],
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/cypress/**",
+      "**/.{idea,git,cache,output,temp}/**",
+      "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"
+    ],
+    "enabled": false
+  },
+  "slowTestThreshold": 300,
+  "disableConsoleIntercept": false,
+  "poolOptions": {
+    "threads": {
+      "maxThreads": 1,
+      "minThreads": 1
+    },
+    "forks": {}
+  },
+  "threads": true,
+  "singleThread": false,
+  "bail": 1,
+  "defines": {},
+  "root": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873",
+  "mode": "test",
+  "inspect": false,
+  "inspectBrk": false,
+  "fileParallelism": true,
+  "deps": {
+    "inline": [
+      {},
+      {}
+    ]
+  },
+  "server": {
+    "deps": {
+      "inline": [
+        {},
+        {},
+        {},
+        "@nuxt/test-utils"
+      ],
+      "moduleDirectories": [
+        "/node_modules/"
+      ],
+      "cacheDir": "node_modules/.vitest"
+    }
+  },
+  "snapshotOptions": {
+    "expand": false,
+    "snapshotFormat": {},
+    "updateSnapshot": "new",
+    "snapshotEnvironment": null
+  },
+  "poolMatchGlobs": [],
+  "setupFiles": [
+    "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/.'vitest.3.setup.js"
+  ],
+  "globalSetup": [],
+  "cache": {
+    "dir": "/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/node_modules/.vitest"
+  },
+  "sequence": {
+    "hooks": "parallel"
+  },
+  "environmentMatchGlobs": [],
+  "browser": {
+    "enabled": false,
+    "headless": false,
+    "slowHijackESM": false,
+    "isolate": true,
+    "api": {
+      "middlewareMode": true
+    }
+  },
+  "testTransformMode": {}
+}
+11:35:16 (12650) TRACE ChildProcessProxy  ↓ test/disconnect.test.js  (1 test | 1 skipped)
+
+11:35:16 (12650) TRACE ChildProcessProxy 
+
+11:35:16 (12650) TRACE ChildProcessProxy ⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+11:35:16 (12650) TRACE ChildProcessProxy 
+Vitest caught 2 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+11:35:16 (12650) TRACE ChildProcessProxy 
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+
+11:35:16 (12650) TRACE ChildProcessProxy ReferenceError: required_connectionId is not defined
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ Module.handler function:71:19
+
+11:35:16 (12650) TRACE ChildProcessProxy 
+
+11:35:16 (12650) TRACE ChildProcessProxy This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+11:35:16 (12650) TRACE ChildProcessProxy 
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+
+11:35:16 (12650) TRACE ChildProcessProxy AssertionError: promise resolved "undefined" instead of rejecting
+
+11:35:16 (12650) TRACE ChildProcessProxy 
+- Expected: 
+[Error: rejected promise]
+
++ Received: 
+undefined
+
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ Assertion.__VITEST_REJECTS__ ../../node_modules/@vitest/expect/dist/index.js:1417:19
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ Assertion.propertyGetter ../../node_modules/chai/lib/chai/utils/addProperty.js:62:29
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ Object.proxyGetter [as get] ../../node_modules/chai/lib/chai/utils/proxify.js:98:22
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ test/function.test.js:87:16
+
+11:35:16 (12650) TRACE ChildProcessProxy      85|     let fn = async () =>{  handler(inputRecords)};
+     86|       //qgetConnectionId("167.89.232")};
+     87|      expect(fn).rejects.toThrow();
+       |                ^
+     88|     // Assert
+     89|     // expect(result.statusCode).toBe(200);
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ ../../node_modules/@vitest/runner/dist/index.js:128:14
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ ../../node_modules/@vitest/runner/dist/index.js:59:26
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ runTest ../../node_modules/@vitest/runner/dist/index.js:675:17
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+
+11:35:16 (12650) TRACE ChildProcessProxy  ❯ runSuite ../../node_modules/@vitest/runner/dist/index.js:793:15
+
+11:35:16 (12650) TRACE ChildProcessProxy 
+
+11:35:16 (12650) TRACE ChildProcessProxy This error originated in "test/function.test.js" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+11:35:16 (12650) TRACE ChildProcessProxy ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+11:35:16 (12650) TRACE ChildProcessProxy 
+
+11:35:16 (12650) TRACE ChildProcessProxy  Test Files  1 passed | 1 skipped (2)
+
+11:35:16 (12650) TRACE ChildProcessProxy       Tests  1 passed | 1 skipped (2)
+
+11:35:16 (12650) TRACE ChildProcessProxy      Errors  2 errors
+
+11:35:16 (12650) TRACE ChildProcessProxy    Start at  11:35:14
+
+11:35:16 (12650) TRACE ChildProcessProxy    Duration  1.47s (transform 35ms, setup 26ms, collect 680ms, tests 51ms, environment 0ms, prepare 216ms)
+
+11:35:16 (12650) TRACE ChildProcessProxy 
+
+11:35:16 (12650) ERROR DryRunExecutor One or more tests resulted in an error:
+	An error occurred outside of a test run, please be sure to properly await your promises! {"stack":"ReferenceError: required_connectionId is not defined\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/function:71:19)","message":"required_connectionId is not defined","stackStr":"ReferenceError: required_connectionId is not defined\n    at Module.handler (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/function:71:19)","nameStr":"ReferenceError","expected":"undefined","actual":"undefined","constructor":"Function<ReferenceError>","name":"ReferenceError","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"Module.handler","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/function","line":71,"column":19}]}
+{"message":"promise resolved \"undefined\" instead of rejecting","showDiff":true,"expected":"[Error: rejected promise]","actual":"undefined","stack":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","stackStr":"Error: promise resolved \"undefined\" instead of rejecting\n    at Assertion.__VITEST_REJECTS__ (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js:1417:19)\n    at Assertion.propertyGetter (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js:62:29)\n    at Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js:98:22)\n    at /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/test/function.test.js:87:16\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:128:14\n    at file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:59:26\n    at runTest (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:675:17)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)\n    at runSuite (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js:793:15)","nameStr":"AssertionError","diff":"- Expected: \n[Error: rejected promise]\n\n+ Received: \nundefined","name":"AssertionError","constructor":"Function<AssertionError>","toJSON":"Function<anonymous>","toString":"Function<toString>","VITEST_TEST_PATH":"test/function.test.js","type":"Unhandled Rejection","stacks":[{"method":"Assertion.__VITEST_REJECTS__","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/expect/dist/index.js","line":1417,"column":19},{"method":"Assertion.propertyGetter","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/addProperty.js","line":62,"column":29},{"method":"Object.proxyGetter [as get]","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/chai/lib/chai/utils/proxify.js","line":98,"column":22},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp/sandbox8360873/test/function.test.js","line":87,"column":16},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":128,"column":14},{"method":"","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":59,"column":26},{"method":"runTest","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":675,"column":17},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15},{"method":"runSuite","file":"/Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@vitest/runner/dist/index.js","line":793,"column":15}]}
+11:35:16 (12650) ERROR Stryker Unexpected error occurred while running Stryker Error: Something went wrong in the initial test run
+    at DryRunExecutor.validateResultCompleted (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:75:15)
+    at DryRunExecutor.executeDryRun (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/process/3-dry-run-executor.js:95:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async WorkItem.execute (file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:32:28)
+    at async file:///Users/vamshipotu/Desktop/AWSTerraform/tfproject/node_modules/@stryker-mutator/core/dist/src/concurrent/pool.js:69:13
+11:35:16 (12650) INFO Stryker This might be a known problem with a solution documented in our troubleshooting guide.
+11:35:16 (12650) INFO Stryker You can find it at https://stryker-mutator.io/docs/stryker-js/troubleshooting/
+11:35:16 (12650) DEBUG ChildProcessProxy Disposing of worker process 12662
+11:35:16 (12650) DEBUG ChildProcessProxy Kill 12662
+11:35:16 (12650) DEBUG ChildProcessProxy Disposing of worker process 12666
+11:35:16 (12650) DEBUG ChildProcessProxy Kill 12666
+11:35:16 (12650) DEBUG ChildProcessProxy Disposing of worker process 12661
+11:35:16 (12650) DEBUG ChildProcessProxy Kill 12661
+11:35:16 (12650) DEBUG ChildProcessProxy Disposing of worker process 12665
+11:35:16 (12650) DEBUG ChildProcessProxy Kill 12665
+11:35:16 (12650) DEBUG ChildProcessProxy Disposing of worker process 12654
+11:35:16 (12650) DEBUG ChildProcessProxy Kill 12654
+11:35:16 (12650) DEBUG TemporaryDirectory Deleting stryker temp directory /Users/vamshipotu/Desktop/AWSTerraform/tfproject/.stryker-tmp

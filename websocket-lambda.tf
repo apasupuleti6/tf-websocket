@@ -113,6 +113,8 @@ resource "aws_lambda_permission" "websocket_lambda_disconnect_link_gw" {
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_apigatewayv2_api.websocket-gw.execution_arn}/*/*"
 }
+
+
 resource "aws_cloudwatch_log_group" "websocket-lambda" {
   name = "websocket-lambda"
 
@@ -120,7 +122,6 @@ resource "aws_cloudwatch_log_group" "websocket-lambda" {
     Environment = "dev"
   }
 }
-
 
 
 # data "aws_iam_policy_document" "lambda_logging" {

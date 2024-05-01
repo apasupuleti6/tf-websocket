@@ -2,13 +2,24 @@ resource "aws_apigatewayv2_api" "websocket-gw" {
   name                       = "websocket-tf-api"
   protocol_type              = "WEBSOCKET"
   route_selection_expression = "$request.body.action"
+
+  
 }
+
 
 resource "aws_apigatewayv2_stage" "dev" {
   api_id      = aws_apigatewayv2_api.websocket-gw.id
   name        = "websocket-tf-dev-stage"
   auto_deploy = false
+  default_route_settings {
+    logging_level = "INFO"
+    throttling_rate_limit = 100
+    throttling_burst_limit = 50
 
+    
+  }
+
+ 
   access_log_settings {
     destination_arn = aws_cloudwatch_log_group.api_gw.arn
 
@@ -50,6 +61,8 @@ resource "aws_apigatewayv2_route" "apigateway_connect_route" {
   api_id    = aws_apigatewayv2_api.websocket-gw.id
   route_key = "$connect"
   target    = "integrations/${aws_apigatewayv2_integration.connect_lamda.id}"
+  authorization_type = "CUSTOM"
+  authorizer_id = aws_apigatewayv2_authorizer.authorizer.id
 }
 /*creating API Gateway v2 route response: BadRequestException: Currently, only $default is supported as a RouteResponseKey.
  The creation of the RouteResponse with a key of $default will indicate to API Gateway that this Route is intended to handle two-way communication.*/
@@ -83,4 +96,15 @@ resource "aws_cloudwatch_log_group" "api_gw" {
 locals {
   zip_path = "zip/"
   log_rentention = "7"
+}
+
+data "aws_subnet" "selected" {
+  filter {
+    name ="tag:Name"
+    values = ["testing capture name"]
+  }
+}
+
+output "subnetname" {
+  value = [data.aws_subnet.selected.id]
 }

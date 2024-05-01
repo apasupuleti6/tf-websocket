@@ -77,10 +77,10 @@ describe("mock full", () => {
       .on(GetCommand, {
         TableName: "websocket-connection",
         Key: { clientId: "167.89.777" },
-      }).resolves({});
-      // .resolves({
-      //   Item: { connectionId: "first_connection_id", clientId: "167.89.777" },
-      // });
+      })
+      .resolves({
+        Item: { connectionId: "first_connection_id", clientId: "167.89.777" },
+      });
     
     let fn = async () =>{  handler(inputRecords)};
       //qgetConnectionId("167.89.232")};
